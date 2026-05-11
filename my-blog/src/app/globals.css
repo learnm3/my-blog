@@ -1,0 +1,32 @@
+@import "tailwindcss";
+
+@keyframes pet-bob {
+  0%, 100% { transform: translateY(0) scale(1); }
+  50% { transform: translateY(-8px) scale(1.05); }
+}
+
+@keyframes pet-walk {
+  0%   { transform: translateX(-3px) translateY(-4px) rotate(-2deg); }
+  25%  { transform: translateX(1px) translateY(-6px) rotate(0deg); }
+  50%  { transform: translateX(3px) translateY(-3px) rotate(2deg); }
+  75%  { transform: translateX(-1px) translateY(-5px) rotate(0deg); }
+  100% { transform: translateX(-3px) translateY(-4px) rotate(-2deg); }
+}
+
+@keyframes pet-rest {
+  0%, 100% { transform: translateY(0) scale(1); }
+  30%  { transform: translateY(2px) scale(0.95); }
+  70%  { transform: translateY(2px) scale(0.95); }
+}
+
+.animate-pet-bob {
+  animation: pet-bob 2s ease-in-out infinite;
+}
+
+.animate-pet-walk {
+  animation: pet-walk 0.4s ease-in-out infinite;
+}
+
+.animate-pet-rest {
+  animation: pet-rest 3s ease-in-out infinite;
+}
