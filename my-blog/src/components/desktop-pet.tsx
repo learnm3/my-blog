@@ -2,7 +2,6 @@
 
 import { useState, useEffect, useCallback, useRef } from "react";
 import { PetChat } from "@/components/pet-chat";
-import { PixelCat } from "@/components/pixel-cat";
 
 type AnimState = "idle" | "walking" | "resting";
 
@@ -90,19 +89,19 @@ export function DesktopPet() {
 
   return (
     <>
-      {/* 像素猫 */}
+      {/* 爱弥斯桌宠 */}
       <button
         onClick={handleClick}
-        className={`fixed z-40 cursor-pointer select-none text-4xl transition-all duration-[1500ms] ease-in-out ${animClass} ${mounted ? "opacity-100" : "opacity-0"}`}
+        className={`fixed z-40 cursor-pointer select-none transition-all duration-[1500ms] ease-in-out ${animClass} ${mounted ? "opacity-100" : "opacity-0"}`}
         style={{
           left: mounted ? pos.x : -100,
           top: mounted ? pos.y : -100,
           transform: facingRight ? "scaleX(1)" : "scaleX(-1)",
         }}
-        aria-label="点击和小素对话"
-        title="点我聊天喵~"
+        aria-label="点击和爱弥斯对话"
+        title="点我聊天~"
       >
-        <PixelCat expression={expression} />
+        <img src="/amis.webp" alt="爱弥斯" className="w-24 h-24" draggable={false} />
       </button>
 
       {/* 对话气泡 */}

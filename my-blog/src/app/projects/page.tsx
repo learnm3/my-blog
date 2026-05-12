@@ -13,7 +13,20 @@ export default async function ProjectsPage() {
 
   return (
     <div>
-      <h1 className="mb-8 text-3xl font-bold">Projects</h1>
+      <div className="mb-8">
+        <h1 className="text-3xl font-bold">Projects</h1>
+        <p className="mt-2 text-zinc-500 dark:text-zinc-400">
+          Open source work from GitHub, automatically synced from{" "}
+          <a
+            href="https://github.com/learnm3"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-blue-600 hover:underline dark:text-blue-400"
+          >
+            @learnm3
+          </a>.
+        </p>
+      </div>
       {error ? (
         <p className="text-zinc-500">{error}</p>
       ) : (
