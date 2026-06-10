@@ -8,6 +8,7 @@ import { getAllPosts } from "@/lib/posts";
 import { PostCard } from "@/components/post-card";
 import { ClickParticles } from "@/components/click-particles";
 import { Calendar } from "@/components/calendar";
+import { LeetCodeHeatmap } from "@/components/leetcode-heatmap";
 import { VisitorCounter } from "@/components/visitor-counter";
 import Link from "next/link";
 
@@ -62,9 +63,9 @@ export default async function HomePage() {
           </p>
         </div>
 
-        {/* Calendar — directly visible on landing */}
+        {/* Calendar + LeetCode Heatmap — directly visible on landing */}
         <div
-          className="relative mx-auto w-full max-w-md animate-fade-in-up"
+          className="relative mx-auto w-full max-w-5xl animate-fade-in-up"
           style={{ animationDelay: "700ms" }}
         >
           <div className="mb-5 text-center">
@@ -73,7 +74,10 @@ export default async function HomePage() {
               日历与力扣刷题记录
             </p>
           </div>
-          <Calendar />
+          <div className="grid grid-cols-1 gap-5 lg:grid-cols-2">
+            <Calendar />
+            <LeetCodeHeatmap />
+          </div>
         </div>
 
         {/* Scroll hint */}
