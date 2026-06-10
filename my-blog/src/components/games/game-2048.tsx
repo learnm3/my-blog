@@ -141,10 +141,10 @@ export function Game2048() {
           onClick={reset}
           className="rounded-md bg-blue-600 px-3 py-1 text-sm text-white transition-colors hover:bg-blue-700"
         >
-          New Game
+          新游戏
         </button>
-        {won && <span className="text-sm font-semibold text-blue-600">You got 2048!</span>}
-        {gameOver && <span className="text-sm font-semibold text-red-600">Game Over!</span>}
+        {won && <span className="text-sm font-semibold text-blue-600">你达成了 2048！</span>}
+        {gameOver && <span className="text-sm font-semibold text-red-600">游戏结束！</span>}
       </div>
       <div className="rounded-lg border-2 border-zinc-400 bg-zinc-300 p-2 dark:border-zinc-600 dark:bg-zinc-700">
         <div className="grid grid-cols-4 gap-2">
@@ -161,7 +161,7 @@ export function Game2048() {
           ))}
         </div>
       </div>
-      <p className="mt-3 text-xs text-zinc-400">Arrow keys to move tiles</p>
+      <p className="mt-3 text-xs text-zinc-400">方向键移动方块</p>
     </div>
   );
 }

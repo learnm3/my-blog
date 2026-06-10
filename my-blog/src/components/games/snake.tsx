@@ -107,19 +107,19 @@ export function Snake() {
     <div className="flex flex-col items-center">
       <div className="mb-4 flex items-center gap-4">
         <span className="text-sm text-zinc-600 dark:text-zinc-400">
-          Score: {score}
+          得分：{score}
         </span>
         <button
           onClick={reset}
           className="rounded-md bg-blue-600 px-3 py-1 text-sm text-white transition-colors hover:bg-blue-700"
         >
-          Restart
+          重新开始
         </button>
         {gameOver && (
-          <span className="text-sm font-semibold text-red-600">Game Over!</span>
+          <span className="text-sm font-semibold text-red-600">游戏结束！</span>
         )}
         {!started && !gameOver && (
-          <span className="text-sm text-zinc-500">Press Space to start</span>
+          <span className="text-sm text-zinc-500">按空格键开始</span>
         )}
       </div>
       <div
@@ -156,7 +156,7 @@ export function Snake() {
           ))}
         </div>
       </div>
-      <p className="mt-3 text-xs text-zinc-400">Arrow keys to move</p>
+      <p className="mt-3 text-xs text-zinc-400">方向键控制移动</p>
     </div>
   );
 }

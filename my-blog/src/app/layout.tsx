@@ -6,8 +6,8 @@ import { SiteFooter } from "@/components/site-footer";
 import { DesktopPet } from "@/components/desktop-pet";
 
 export const metadata: Metadata = {
-  title: "NoFinalLevel | Portfolio",
-  description: "Personal portfolio — projects, gallery, and more.",
+  title: "NoFinalLevel | 个人作品集",
+  description: "个人作品集 — 项目、相册与更多",
 };
 
 export const viewport: Viewport = {
@@ -21,7 +21,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en" suppressHydrationWarning>
+    <html lang="zh-CN" suppressHydrationWarning>
       <body className="flex min-h-screen flex-col bg-white text-zinc-900 dark:bg-zinc-950 dark:text-zinc-100">
         <AppThemeProvider>
           <SiteHeader />

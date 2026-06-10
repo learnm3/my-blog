@@ -9,9 +9,9 @@ export function PostCard({ post }: { post: PostMeta }) {
     >
       <div className="flex items-center gap-3 mb-2">
         <time className="text-xs text-zinc-400 dark:text-zinc-500">
-          {new Date(post.date).toLocaleDateString("en-US", {
+          {new Date(post.date).toLocaleDateString("zh-CN", {
             year: "numeric",
-            month: "short",
+            month: "long",
             day: "numeric",
           })}
         </time>

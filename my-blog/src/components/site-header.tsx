@@ -6,11 +6,11 @@ import { usePathname } from "next/navigation";
 import { ThemeToggle } from "@/components/ui/icon-button";
 
 const navLinks = [
-  { href: "/#home", label: "Home", id: "home" },
-  { href: "/#projects", label: "Projects", id: "projects" },
-  { href: "/#gallery", label: "Gallery", id: "gallery" },
-  { href: "/#blog", label: "Blog", id: "blog" },
-  { href: "/#games", label: "Games", id: "games" },
+  { href: "/#home", label: "首页", id: "home" },
+  { href: "/#projects", label: "项目", id: "projects" },
+  { href: "/#gallery", label: "相册", id: "gallery" },
+  { href: "/#blog", label: "博客", id: "blog" },
+  { href: "/#games", label: "游戏", id: "games" },
 ];
 
 export function SiteHeader() {

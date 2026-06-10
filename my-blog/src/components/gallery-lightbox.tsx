@@ -66,7 +66,7 @@ export function GalleryLightbox({ images }: { images: GalleryImage[] }) {
           <button
             className="absolute left-4 top-1/2 -translate-y-1/2 rounded-full bg-white/10 p-3 transition-colors hover:bg-white/20"
             onClick={(e) => { e.stopPropagation(); prev(); }}
-            aria-label="Previous"
+            aria-label="上一张"
           >
             <svg className="h-5 w-5 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
@@ -87,7 +87,7 @@ export function GalleryLightbox({ images }: { images: GalleryImage[] }) {
           <button
             className="absolute right-4 top-1/2 -translate-y-1/2 rounded-full bg-white/10 p-3 transition-colors hover:bg-white/20"
             onClick={(e) => { e.stopPropagation(); next(); }}
-            aria-label="Next"
+            aria-label="下一张"
           >
             <svg className="h-5 w-5 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
@@ -98,7 +98,7 @@ export function GalleryLightbox({ images }: { images: GalleryImage[] }) {
           <button
             className="absolute right-4 top-4 rounded-full bg-white/10 p-2 transition-colors hover:bg-white/20"
             onClick={close}
-            aria-label="Close"
+            aria-label="关闭"
           >
             <svg className="h-5 w-5 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />

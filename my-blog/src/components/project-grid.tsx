@@ -4,7 +4,7 @@ import { ProjectCard } from "@/components/project-card";
 export function ProjectGrid({ repos }: { repos: GitHubRepo[] }) {
   if (repos.length === 0) {
     return (
-      <p className="text-zinc-500">No public repositories found.</p>
+      <p className="text-zinc-500">暂无公开仓库</p>
     );
   }
 

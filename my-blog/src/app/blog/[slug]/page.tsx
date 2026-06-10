@@ -48,7 +48,7 @@ export default async function BlogPostPage({ params }: Props) {
         <svg className="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
         </svg>
-        Back to blog
+        返回博客
       </Link>
 
       <article className="mx-auto max-w-3xl">
@@ -58,7 +58,7 @@ export default async function BlogPostPage({ params }: Props) {
           </h1>
           <div className="flex items-center gap-3 text-sm text-zinc-500 dark:text-zinc-400">
             <time>
-              {new Date(post.date).toLocaleDateString("en-US", {
+              {new Date(post.date).toLocaleDateString("zh-CN", {
                 year: "numeric",
                 month: "long",
                 day: "numeric",

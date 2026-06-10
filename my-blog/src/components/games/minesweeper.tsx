@@ -151,17 +151,17 @@ export function Minesweeper() {
     <div className="flex flex-col items-center">
       <div className="mb-4 flex items-center gap-4">
         <span className="text-sm text-zinc-600 dark:text-zinc-400">
-          Mines left: {minesLeft}
+          剩余雷数：{minesLeft}
         </span>
         <button
           onClick={reset}
           className="rounded-md bg-blue-600 px-3 py-1 text-sm text-white transition-colors hover:bg-blue-700"
         >
-          New Game
+          新游戏
         </button>
         {(gameOver || won) && (
           <span className={`text-sm font-semibold ${won ? "text-green-600" : "text-red-600"}`}>
-            {won ? "You Win!" : "Game Over!"}
+            {won ? "你赢了！" : "游戏结束！"}
           </span>
         )}
       </div>

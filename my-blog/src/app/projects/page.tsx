@@ -8,15 +8,15 @@ export default async function ProjectsPage() {
   try {
     repos = await fetchGitHubRepos("learnm3");
   } catch {
-    error = "Failed to load GitHub projects. Please try again later.";
+    error = "GitHub 项目加载失败，请稍后重试";
   }
 
   return (
     <div>
       <div className="mb-8">
-        <h1 className="text-3xl font-bold">Projects</h1>
+        <h1 className="text-3xl font-bold">项目</h1>
         <p className="mt-2 text-zinc-500 dark:text-zinc-400">
-          Open source work from GitHub, automatically synced from{" "}
+          来自 GitHub 的开源作品，自动同步自{" "}
           <a
             href="https://github.com/learnm3"
             target="_blank"

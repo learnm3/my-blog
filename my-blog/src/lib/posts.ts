@@ -31,7 +31,7 @@ export function getAllPosts(): PostMeta[] {
         title: data.title || slug,
         date: data.date || "",
         summary: data.summary || "",
-        readingTime: `${minutes} min read`,
+        readingTime: `${minutes} 分钟阅读`,
       };
     });
 
@@ -55,7 +55,7 @@ export function getPostBySlug(slug: string): PostMeta | null {
       title: data.title || slug,
       date: data.date || "",
       summary: data.summary || "",
-      readingTime: `${minutes} min read`,
+      readingTime: `${minutes} 分钟阅读`,
     };
   } catch {
     return null;

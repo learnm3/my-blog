@@ -22,7 +22,7 @@ export function SiteFooter() {
           }}
           className="text-sm text-zinc-400 transition-colors hover:text-blue-600 dark:hover:text-blue-400"
         >
-          ↑ Back to top
+          ↑ 回到顶部
         </button>
       </div>
     </footer>

@@ -10,24 +10,24 @@ type Game = "menu" | "minesweeper" | "snake" | "2048";
 const games = [
   {
     id: "minesweeper" as const,
-    name: "Minesweeper",
+    name: "扫雷",
     emoji: "💣",
     color: "from-amber-500 to-red-500",
-    desc: "Left-click to reveal, right-click to flag. Clear all mines to win!",
+    desc: "左键翻开、右键标旗，清除所有地雷即可获胜！",
   },
   {
     id: "snake" as const,
-    name: "Snake",
+    name: "贪吃蛇",
     emoji: "🐍",
     color: "from-green-500 to-emerald-500",
-    desc: "Eat food, grow longer. Don't hit the walls or yourself!",
+    desc: "吃掉食物变长，不要撞墙或撞到自己！",
   },
   {
     id: "2048" as const,
     name: "2048",
     emoji: "🧩",
     color: "from-blue-500 to-indigo-500",
-    desc: "Merge matching tiles. Use arrow keys to slide. Reach 2048!",
+    desc: "合并相同数字方块，用方向键滑动，达到 2048！",
   },
 ];
 
@@ -36,9 +36,9 @@ export default function GamesPage() {
 
   return (
     <div className="py-8">
-      <h1 className="mb-2 text-3xl font-bold">Mini Games</h1>
+      <h1 className="mb-2 text-3xl font-bold">小游戏</h1>
       <p className="mb-8 text-zinc-500 dark:text-zinc-400">
-        Take a break and have some fun. Three classic games, right in the browser.
+        休息一下，三个经典浏览器小游戏
       </p>
 
       {game === "menu" && (
@@ -68,7 +68,7 @@ export default function GamesPage() {
             <svg className="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
             </svg>
-            Back to games
+            返回游戏列表
           </button>
           <div className="rounded-2xl border border-zinc-200 bg-zinc-50/50 p-6 dark:border-zinc-800 dark:bg-zinc-900/50">
             {game === "minesweeper" && <Minesweeper />}

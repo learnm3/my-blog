@@ -40,7 +40,7 @@ export function ProjectCard({ repo }: { repo: GitHubRepo }) {
         </h3>
       </div>
       <p className="mb-4 text-sm text-zinc-600 line-clamp-2 dark:text-zinc-400">
-        {repo.description || "No description"}
+        {repo.description || "暂无描述"}
       </p>
       <div className="flex flex-wrap items-center gap-x-4 gap-y-1.5 text-xs text-zinc-500 dark:text-zinc-400">
         {repo.language && (
