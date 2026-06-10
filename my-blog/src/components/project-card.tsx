@@ -1,4 +1,4 @@
-import type { GitHubRepo } from "@/lib/github";
+﻿import type { GitHubRepo } from "@/lib/github";
 
 const languageColors: Record<string, string> = {
   TypeScript: "bg-blue-500",
@@ -29,7 +29,7 @@ export function ProjectCard({ repo }: { repo: GitHubRepo }) {
       href={repo.html_url}
       target="_blank"
       rel="noopener noreferrer"
-      className="group block rounded-xl border border-zinc-200 bg-white p-6 transition-all duration-200 hover:-translate-y-1 hover:border-blue-200 hover:shadow-lg dark:border-zinc-800 dark:bg-zinc-900 dark:hover:border-blue-800"
+      className="group block rounded-xl border border-zinc-200 bg-white p-6 transition-all duration-200 hover:animate-float hover:border-blue-200 hover:shadow-lg dark:border-zinc-800 dark:bg-zinc-900 dark:hover:border-blue-800"
     >
       <div className="flex items-center gap-2 mb-2">
         <svg className="h-4 w-4 text-zinc-400 dark:text-zinc-500" viewBox="0 0 16 16" fill="currentColor">

@@ -1,0 +1,11 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(npm run *)",
+      "Bash(rm src/components/pixel-cat.tsx 2>&1)"
+    ],
+    "additionalDirectories": [
+      "c:\\Users\\11060\\Desktop\\my-blog\\src\\components"
+    ]
+  }
+}

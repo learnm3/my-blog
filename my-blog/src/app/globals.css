@@ -1,10 +1,9 @@
-@import "tailwindcss";
+﻿@import "tailwindcss";
 
 @custom-variant dark (&:where(.dark, .dark *));
 
 html {
   scroll-behavior: smooth;
-  scroll-snap-type: y mandatory;
 }
 
 @keyframes fade-in-up {
@@ -60,4 +59,13 @@ html {
 
 .animate-pet-rest {
   animation: pet-rest 3s ease-in-out infinite;
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0px) scale(1); }
+  50% { transform: translateY(-8px) scale(1.02); }
+}
+
+.animate-float {
+  animation: float 0.8s ease-in-out infinite;
 }

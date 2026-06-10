@@ -16,7 +16,10 @@ export function SiteFooter() {
           </a>
         </div>
         <button
-          onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
+          onClick={() => {
+            const el = document.getElementById("home");
+            if (el) el.scrollIntoView({ behavior: "smooth" });
+          }}
           className="text-sm text-zinc-400 transition-colors hover:text-blue-600 dark:hover:text-blue-400"
         >
           ↑ Back to top

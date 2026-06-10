@@ -1,9 +1,15 @@
-import Link from "next/link";
-import { fetchGitHubRepos } from "@/lib/github";
+﻿import { fetchGitHubRepos } from "@/lib/github";
 import { ProjectGrid } from "@/components/project-grid";
 import { GalleryLightbox } from "@/components/gallery-lightbox";
 import { galleryImages } from "@/lib/gallery-data";
 import { GamesSection } from "@/components/games-section";
+import { ScrollController } from "@/components/scroll-controller";
+import { getAllPosts } from "@/lib/posts";
+import { PostCard } from "@/components/post-card";
+import { ClickParticles } from "@/components/click-particles";
+import { Calendar } from "@/components/calendar";
+import { LeetCodeHeatmap } from "@/components/leetcode-heatmap";
+import Link from "next/link";
 
 const techStack = [
   "Next.js", "React", "TypeScript", "Tailwind CSS",
@@ -20,12 +26,16 @@ export default async function HomePage() {
     repoError = "Failed to load GitHub projects.";
   }
 
+  const posts = getAllPosts().slice(0, 3);
+
   return (
-    <div className="-mx-4 -mt-8">
+    <ScrollController>
+      <ClickParticles />
+      <div className="-mx-4 -mt-8">
       {/* ======== Section 1: Hero ======== */}
       <section
         id="home"
-        className="relative flex min-h-screen snap-start snap-always flex-col items-center justify-center gap-10 px-4 py-24 text-center"
+        className="relative flex flex-col items-center gap-10 px-4 py-24 text-center"
       >
         {/* Background gradient */}
         <div className="pointer-events-none absolute inset-0 flex items-start justify-center overflow-hidden">
@@ -33,7 +43,7 @@ export default async function HomePage() {
         </div>
 
         {/* Hero content */}
-        <div className="relative space-y-6">
+        <div className="relative space-y-6 pt-12">
           <div className="flex justify-center animate-fade-in-up" style={{ animationDelay: "0ms" }}>
             <div className="flex h-24 w-24 items-center justify-center rounded-2xl bg-gradient-to-br from-blue-500 to-blue-700 text-4xl font-bold text-white shadow-lg shadow-blue-500/25">
               N
@@ -78,10 +88,27 @@ export default async function HomePage() {
           ))}
         </div>
 
+        {/* Calendar + LeetCode Heatmap — directly visible on landing */}
+        <div
+          className="relative mx-auto w-full max-w-5xl animate-fade-in-up"
+          style={{ animationDelay: "700ms" }}
+        >
+          <div className="mb-5 text-center">
+            <h2 className="text-xl font-bold text-zinc-800 dark:text-zinc-200">Daily Track</h2>
+            <p className="mt-1 text-sm text-zinc-500 dark:text-zinc-400">
+              日历与力扣刷题记录
+            </p>
+          </div>
+          <div className="grid grid-cols-1 gap-5 md:grid-cols-2">
+            <Calendar />
+            <LeetCodeHeatmap />
+          </div>
+        </div>
+
         {/* Scroll hint */}
         <div
-          className="absolute bottom-8 animate-fade-in-up opacity-40"
-          style={{ animationDelay: "800ms" }}
+          className="animate-fade-in-up pb-4 opacity-40"
+          style={{ animationDelay: "900ms" }}
         >
           <a
             href="#projects"
@@ -94,7 +121,7 @@ export default async function HomePage() {
       </section>
 
       {/* ======== Section 2: Projects ======== */}
-      <section id="projects" className="flex min-h-screen snap-start snap-always items-center px-4 py-24">
+      <section id="projects" className="flex min-h-screen items-center px-4 py-24">
         <div className="mx-auto w-full max-w-5xl">
           <div className="mb-8">
             <h2 className="text-3xl font-bold">Projects</h2>
@@ -118,8 +145,8 @@ export default async function HomePage() {
         </div>
       </section>
 
-      {/* ======== Section 3: Gallery ======== */}
-      <section id="gallery" className="flex min-h-screen snap-start snap-always items-center bg-zinc-50/50 px-4 py-24 dark:bg-zinc-900/30">
+      {/* ======== Section 4: Gallery ======== */}
+      <section id="gallery" className="flex min-h-screen items-center bg-zinc-50/50 px-4 py-24 dark:bg-zinc-900/30">
         <div className="mx-auto w-full max-w-5xl">
           <div className="mb-8">
             <h2 className="text-3xl font-bold">Gallery</h2>
@@ -131,8 +158,42 @@ export default async function HomePage() {
         </div>
       </section>
 
-      {/* ======== Section 4: Games ======== */}
-      <section id="games" className="flex min-h-screen snap-start snap-always items-center px-4 py-24">
+      {/* ======== Section 5: Blog ======== */}
+      <section id="blog" className="flex min-h-screen items-center px-4 py-24">
+        <div className="mx-auto w-full max-w-5xl">
+          <div className="mb-8 flex items-end justify-between">
+            <div>
+              <h2 className="text-3xl font-bold">Tech Notes</h2>
+              <p className="mt-2 text-zinc-500 dark:text-zinc-400">
+                Technical articles, notes, and things I&apos;ve learned.
+              </p>
+            </div>
+            <Link
+              href="/blog"
+              className="shrink-0 text-sm text-blue-600 transition-colors hover:text-blue-700 dark:text-blue-400 dark:hover:text-blue-300"
+            >
+              View all →
+            </Link>
+          </div>
+          {posts.length === 0 ? (
+            <div className="flex flex-col items-center gap-4 rounded-2xl border border-dashed border-zinc-300 p-12 text-center dark:border-zinc-700">
+              <span className="text-4xl">📝</span>
+              <p className="text-zinc-500 dark:text-zinc-400">
+                No posts yet. Start writing!
+              </p>
+            </div>
+          ) : (
+            <div className="grid grid-cols-1 gap-4 sm:grid-cols-3">
+              {posts.map((post) => (
+                <PostCard key={post.slug} post={post} />
+              ))}
+            </div>
+          )}
+        </div>
+      </section>
+
+      {/* ======== Section 6: Games ======== */}
+      <section id="games" className="flex min-h-screen items-center px-4 py-24">
         <div className="mx-auto w-full max-w-5xl">
           <h2 className="mb-2 text-3xl font-bold">Mini Games</h2>
           <p className="mb-8 text-zinc-500 dark:text-zinc-400">
@@ -145,5 +206,6 @@ export default async function HomePage() {
       {/* Bottom spacer */}
       <div className="h-16" />
     </div>
+    </ScrollController>
   );
 }
